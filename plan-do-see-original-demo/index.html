@@ -1,0 +1,17 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><title>plan.do.see — 원본 기반 포트폴리오 체험</title><style>
+:root{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;color:#233452;background:#f5f7fa}*{box-sizing:border-box}body{margin:0}.demo-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:12px clamp(14px,4vw,44px);background:#163ba5;color:white}.demo-head strong{font-size:14px}.demo-head small{display:block;font-size:12px;opacity:.86;margin-top:4px}.demo-head button{font:inherit;border:1px solid #d9e3ff;background:#f7faff;color:#2456ea;border-radius:8px;padding:8px 13px;cursor:pointer}.demo-head button:hover{background:#dfeaff}.demo-head a{color:white;text-underline-offset:3px;font-size:12px}.frame{display:block;width:100%;height:calc(100vh - 90px);min-height:650px;border:0;background:#f5f7fa}.notice{max-width:760px;margin:45px auto;padding:24px;background:white;border:1px solid #dce4f2;border-radius:12px;line-height:1.7}.notice code{font-size:12px;color:#2456ea;overflow-wrap:anywhere}.notice p{font-size:14px;color:#566985}@media(max-width:680px){.frame{height:calc(100vh - 136px)}.demo-head{align-items:flex-start}}
+</style></head><body>
+<header class="demo-head"><div><strong>plan.do.see / ORIGINAL SOURCE DEMO</strong><small>원본 UI · 가상 예시 기록 · 개인 데이터베이스 연결 없음</small></div><div><button id="reset" type="button">예시 데이터 초기화</button> <a href="../index.html">포트폴리오로 돌아가기</a></div></header>
+<main id="slot">
+  <iframe class="frame" title="Plan-Do-See 실제 소스 기반 가상 데이터 체험"
+    src="original-ui/index.html" referrerpolicy="no-referrer"
+    sandbox="allow-scripts allow-same-origin allow-downloads allow-modals"></iframe>
+</main>
+<script>
+const demo = document.querySelector('.frame');
+document.getElementById('reset').addEventListener('click', () => {
+  if (confirm('이 브라우저의 체험 데이터를 초기 예시로 되돌릴까요?')) {
+    demo.contentWindow.postMessage({type: 'pds-demo-reset'}, location.origin);
+  }
+});
+</script></body></html>
